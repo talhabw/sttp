@@ -14,9 +14,9 @@ const Form = () => {
         reddit_without_slash: /^r$/g,
         reddit_with_slash: /^r\/.*/g,
 
-        twitter_without_slash: /^tt$/g, 
-        twitter_with_slash: /^tt\/.*/g, 
-        twitter_with_colon: /^tt:/g,
+        x_without_slash: /^x$/g, 
+        x_with_slash: /^x\/.*/g, 
+        x_with_colon: /^x:/g,
 
         youtube_without_slash: /^y$/g,
         youtube_with_slash: /^y\/.*/g,
@@ -29,96 +29,28 @@ const Form = () => {
         instagram_without_slash: /^i$/g,
         instagram_with_slash: /^i\/.*/g,
 
-        twitch_without_slash: /^tw$/g,
-        twitch_with_slash: /^tw\/.*/g,
-        twitch_with_colon: /^tw:/g,
-
-        monkeytype_without_slash: /^mk$/g,
-        monkeytype_with_slash: /^mk\/.*/g,
-
-        spotify_without_slash: /^s$/g,
-        spotify_with_slash: /^s\/.*/g,
-
         whatsapp_without_slash: /^w$/g,
-        whatsapp_with_slash: /^w\/.*/g,
 
         translator_without_slash: /^tr$/g,
-        translator_with_slash: /^tr\/.*/g,
-        translator_with_colon: /^tr:/g,
+        translator_with_colon_tr: /^tr:/g,
 
-        discord_without_slash: /^dc$/g,
-        discord_with_slash: /^dc\/.*/g,
+        english_translation: /^en:/g,
 
         gmail_without_slash: /^m$/g,
-        gmail_with_slash: /^m\/.*/g,
-
-        netflix_without_slash: /^n$/g,
-        netflix_with_slash: /^n\/.*/g,
-
-        hackthebox_without_slash: /^htb$/g,
-        hackthebox_with_slash: /^htb\/.*/g,
-
-        tryhackme_without_slash: /^thm$/g,
-        tryhackme_with_slash: /^thm\/.*/g,
-
-        primevideo_without_slash: /^pv$/g,
-        primevideo_with_slash: /^pv\/.*/g,
 
         pinterest_without_slash: /^p$/g,
-        pinterest_with_slash: /^p\/.*/g,
         pinterest_with_colon: /^p:/g,
 
         chat_gpt_without_slash: /^c$/g,
-        chat_gpt_with_slash: /^c\/.*/g,
 
         linkedin_without_slash: /^l$/g,
         linkedin_with_slash: /^l\/+/g,
 
-        aliexpress_without_slash: /^a$/g,
-        aliexpress_with_colon: /^a:/g,
-
-        trello_without_slash: /^t$/g,
-        trello_with_slash: /^t\/+/g,
-
-        outlook_without_slash: /^o$/g,
-        outlook_with_slash: /^o\/+/g,
-
         notion_without_slash: /^no$/g,
-        notion_with_slash: /^no\/+/g,
 
         gdrive_without_slash: /^d$/g,
-        gdrive_with_slash: /^d\/+/g,
-
-        habbo_without_slash: /^h$/g,
-        habbo_with_slash: /^h\/+/g,
-
-        unisantos_without_slash: /^u$/g,
-        unisantos_with_slash: /^u\/+/g,
-
-        protonmail_without_slash: /^pm$/g,
-        protonmail_with_slash: /^pm\/+/g,
-
-        canva_without_slash: /^cv$/g,
-        canva_with_slash: /^cv\/+/g,
-
-        pontogo_without_slash: /^pg$/g,
-        pontogo_with_slash: /^pg\/+/g,
-
-        zoho_without_slash: /^z$/g,
-        zoho_with_slash: /^z\/+/g,
-
-        shopee_without_slash: /^sh$/g,
-        shopee_with_slash: /^sh\/+/g,
-
-        mercadolivre_without_slash: /^ml$/g,
-        mercadolivre_with_slash: /^ml\/+/g,
-
-        speedtest_without_slash: /^st$/g,
-        speedtest_with_slash: /^st\/+/g,
 
         notion_calendar_without_slash: /^nc$/g,
-        notion_calendar_with_slash: /^nc\/+/g,
-
       }
 
     const patterns = [
@@ -156,23 +88,23 @@ const Form = () => {
         }
       },
       {
-        pattern: list_of_patterns.twitter_without_slash,
+        pattern: list_of_patterns.x_without_slash,
         action: () => {
-          window.open("https://twitter.com/", "_self", false);
+          window.open("https://x.com/", "_self", false);
         }
       },
       {
-        pattern: list_of_patterns.twitter_with_slash,
+        pattern: list_of_patterns.x_with_slash,
         action: () => {
-          let tt_input = input.replace(/^tt\/+/g, "");
-          window.open(`https://twitter.com/${tt_input}`, "_self", false);
+          let x_input = input.replace(/^x\/+/g, "");
+          window.open(`https://x.com/${x_input}`, "_self", false);
         }
       },
       {
-        pattern: list_of_patterns.twitter_with_colon,
+        pattern: list_of_patterns.x_with_colon,
         action: () => {
-          let tts_input = input.replace(/^tt:/g, "");
-          window.open(`https://twitter.com/search?q=${tts_input}&src=typed_query`, "_self", false);
+          let xs_input = input.replace(/^x:/g, "");
+          window.open(`https://x.com/search?q=${xs_input}&src=typed_query`, "_self", false);
         }
       },
       {
@@ -229,61 +161,9 @@ const Form = () => {
         }
       },
       {
-        pattern: list_of_patterns.twitch_without_slash,
-        action: () => {
-          window.open("https://twitch.tv/", "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.twitch_with_slash,
-        action: () => {
-          let tw_input = input.replace(/^tw\/+/g, "");
-          window.open(`https://twitch.tv/${tw_input}`, "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.twitch_with_colon,
-        action: () => {
-          let tws_input = input.replace(/^tw:/g, "");
-          window.open(`https://twitch.tv/search?term=${tws_input}`, "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.monkeytype_without_slash,
-        action: () => {
-          window.open("https://monkeytype.com/", "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.monkeytype_with_slash,
-        action: () => {
-          let mk_input = input.replace(/^mk\/+/g, "");
-          window.open(`https://monkeytype.com/${mk_input}`, "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.spotify_without_slash,
-        action: () => {
-          window.open("https://open.spotify.com/", "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.spotify_with_slash,
-        action: () => {
-          let s_input = input.replace(/^s\/+/g, "");
-          window.open(`https://open.spotify.com/${s_input}`, "_self", false);
-        }
-      },
-      {
         pattern: list_of_patterns.whatsapp_without_slash,
         action: () => {
           window.open("https://web.whatsapp.com/", "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.whatsapp_with_slash,
-        action: () => {
-          window.open("https://web.whatsap.com/", "_self", false);
         }
       },
       {
@@ -293,70 +173,23 @@ const Form = () => {
         }
       },
       {
-        pattern: list_of_patterns.translator_with_slash,
-        action: () => {
-          window.open("https://translate.google.com/", "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.translator_with_colon,
+        pattern: list_of_patterns.translator_with_colon_tr,
         action: () => {
           let trs_input = input.replace(/^tr:/g, "");
-          window.open(`https://translate.google.com/#view=home&op=translate&sl=auto&tl=pt&text=${trs_input}`, "_self", false);
+          window.open(`https://translate.google.com/#view=home&op=translate&sl=auto&tl=tr&text=${trs_input}`, "_self", false);
         }
       },
       {
-        pattern: list_of_patterns.discord_without_slash,
+        pattern: list_of_patterns.english_translation,
         action: () => {
-          window.open("https://discord.com/app", "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.discord_with_slash,
-        action: () => {
-          window.open("https://discord.com/app", "_self", false);
+          let en_input = input.replace(/^en:/g, "");
+          window.open(`https://translate.google.com/#view=home&op=translate&sl=auto&tl=en&text=${en_input}`, "_self", false);
         }
       },
       {
         pattern: list_of_patterns.gmail_without_slash,
         action: () => {
           window.open("https://gmail.com/", "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.gmail_with_slash,
-        action: () => {
-          window.open("https://gmail.com/", "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.netflix_without_slash,
-        action: () => {
-          window.open("https://netflix.com/", "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.netflix_with_slash,
-        action: () => {
-          window.open("https://netflix.com/", "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.hackthebox_without_slash,
-        action: () => {
-          window.open("https://app.hackthebox.com/login/", "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.tryhackme_without_slash,
-        action: () => {
-          window.open("https://tryhackme.com/login/", "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.primevideo_without_slash,
-        action: () => {
-          window.open("https://primevideo.com/", "_self", false);
         }
       },
       {
@@ -392,31 +225,6 @@ const Form = () => {
         }
       },
       {
-        pattern: list_of_patterns.aliexpress_without_slash,
-        action: () => {
-          window.open(`https://www.aliexpress.com/`, "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.aliexpress_with_colon,
-        action: () => {
-          let a_input = input.replace(/^a:/g, "");
-          window.open(`https://pt.aliexpress.com/w/wholesale-${a_input}.html`, "_self", false)
-        }
-      },
-      {
-        pattern: list_of_patterns.trello_without_slash,
-        action: () => {
-          window.open(`https://trello.com/`, "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.outlook_without_slash,
-        action: () => {
-          window.open(`https://outlook.live.com/mail/0/`, "_self", false);
-        }
-      },
-      {
         pattern: list_of_patterns.notion_without_slash,
         action: () => {
           window.open(`https://www.notion.so/`, "_self", false);
@@ -429,66 +237,12 @@ const Form = () => {
         }
       },
       {
-        pattern: list_of_patterns.habbo_without_slash,
-        action: () => {
-          window.open(`https://habbo.com.br/`, "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.unisantos_without_slash,
-        action: () => {
-          window.open(`https://ww2.unisantos.br/portal/`, "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.protonmail_without_slash,
-        action: () => {
-          window.open(`https://mail.proton.me/u/4/inbox`, "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.canva_without_slash,
-        action: () => {
-          window.open(`https://www.canva.com/`, "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.pontogo_without_slash,
-        action: () => {
-          window.open(`https://pontogo.app/inicio/login`, "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.zoho_without_slash,
-        action: () => {
-          window.open(`https://mail.zoho.com/zm/`, "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.shopee_without_slash,
-        action: () => {
-          window.open(`https://shopee.com.br/`, "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.mercadolivre_without_slash,
-        action: () => {
-          window.open(`https://www.mercadolivre.com.br/`, "_self", false);
-        }
-      },
-      {
-        pattern: list_of_patterns.speedtest_without_slash,
-        action: () => {
-          window.open(`https://www.speedtest.net/`, "_self", false);
-        }
-      },
-      {
         pattern: list_of_patterns.notion_calendar_without_slash,
         action: () => {
-          window.open(`https://calendar.notion.so/`, "_self", false);
+          window.open(`https://notion-calendar.vercel.app/`, "_self", false);
         }
       },
-    ]
+    ];
 
     for (const { pattern, action } of patterns) {
       if (pattern.test(input)) {
